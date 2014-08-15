@@ -2,7 +2,7 @@
 class Cesar:
    
    def __init__(self):
-    self.letras='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    self.letras=' ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     
    '''Metodo que criptografa:
    chamando o metodo 'crip' e passando os atributos Texto_normal e chave, quando a chave nao for passada
@@ -28,7 +28,14 @@ class Cesar:
          if i in self.letras:
             pos=self.letras.find(i)+chave
             texto_normal += self.letras[pos]
-      return texto_normal
+      return texto_normal[2:]
+#Exemplo de uso. Vale lembrar que o programa somente aceita o alfabeto e nada mais.(Dê um upgrade caso queira)     
+texto=Cesar()
+teste1=texto.crip(input('Digite alguma coisa[entre aspas]: '))
+teste2=texto.decrip(teste1)
+
+print 'Cifrando o texto: ',teste1 #
+print 'Descifrando o texto: ', teste2  
 
 
   
