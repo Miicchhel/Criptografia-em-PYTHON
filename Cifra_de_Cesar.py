@@ -4,11 +4,13 @@ class Cesar:
    def __init__(self):
     self.letras='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     
-   #Metodo que criptografa
+   '''Metodo que criptografa:
+   chamando o metodo 'crip' e passando os atributos Texto_normal e chave, quando a chave nao for passada
+   sera igual a 3, por default.'''
    def crip(self,texto_normal,chave=3):
       texto_cifrado= ' '
       texto_normal=texto_normal.upper()
-            
+      #Analisando se cada 'i' em 'texto_normal' está em self.letras. Se sim, pegamos a 'posição+chave' e add na string vazia texto_cifrado       
       for i in texto_normal:
          if i in self.letras:
             pos=self.letras.find(i)+chave                
